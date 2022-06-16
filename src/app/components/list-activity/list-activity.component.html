@@ -1,0 +1,42 @@
+<div class="container wrapper">
+  <div class="row">
+      <!-- table -->
+      <div class="col-md-12">
+          <div class="inner">
+              <h3>Actividades</h3>
+              <a class="btn btn-primary text-white add" routerLink="/add-activity">
+                <i class="fas fa-user-plus"></i> Agregar
+              </a>
+              <table class="table table-bordered">
+                  <thead>
+                      <tr>
+                          <th scope="col">#</th>
+                          <th scope="col">Nombre</th>
+                          <th scope="col">Descripción</th>
+                          <th scope="col">Fecha</th>
+                          <th scope="col">Estado</th>
+                          <th scope="col">Encargado</th>
+                          <th scope="col">Opciones</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr *ngFor="let item of activityList">
+                          <th scope="row">{{item.id}}</th>
+                          <td>{{item.name}}</td>
+                          <td>{{item.desciptions}}</td>
+                          <td>{{item.datatime}}</td>
+                          <td>{{item.status}}</td>
+                          <td>{{item.user_id}}</td>
+
+                          <td>
+                              <button type="button" class="  btn btn-success btn-sm move-right fa-pencil-square" (click)="onEdit(item)">E</button>
+                              <button type="button" class="btn btn-danger btn-sm fa-trash" (click)="deleteActivity(item.id)">R</button>
+                          </td>
+                      </tr>
+                  </tbody>
+              </table>
+          </div>
+      </div>
+  </div>
+</div>
+
